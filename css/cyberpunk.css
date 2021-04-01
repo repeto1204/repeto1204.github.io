@@ -389,7 +389,7 @@ th:not([align]) {
 }
 html {
   background-color: #000;
-  font-size: 14px;
+  font-size: 12px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -10814,7 +10814,7 @@ article.article .article-meta {
 }
 article.article .content {
   word-wrap: break-word;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 article.article .content h1 {
   font-size: 1.75em;
@@ -10835,9 +10835,11 @@ article.article .content pre {
   font-size: 0.85em;
 }
 article.article .content code {
-  padding: 0;
-  background: transparent;
+  padding: 2px 5px;
+  background: #282c34;
   overflow-wrap: break-word;
+  color: rgba(255,255,255,0.8);
+  border-radius: 5px;
 }
 article.article .content blockquote.pullquote {
   float: right;
