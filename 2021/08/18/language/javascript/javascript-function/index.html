@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>자바스크립트 함수 - HandsomeJ&#039;s Tech Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#000000"><meta name="application-name" content="HandsomeJ&#039;s Tech Blog"><meta name="msapplication-TileImage" content="/img/favicon.webp"><meta name="msapplication-TileColor" content="#000000"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="HandsomeJ&#039;s Tech Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content=""><meta property="og:type" content="blog"><meta property="og:title" content="자바스크립트 함수"><meta property="og:url" content="https://repeto1204.github.io/2021/08/18/language/javascript/javascript-function/"><meta property="og:site_name" content="HandsomeJ&#039;s Tech Blog"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://repeto1204.github.io/images/javascript_cover.jpg"><meta property="article:published_time" content="2021-08-17T16:15:42.000Z"><meta property="article:modified_time" content="2021-08-17T16:29:44.144Z"><meta property="article:author" content="HandsomeJ"><meta property="article:tag" content="javascript"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/javascript_cover.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://repeto1204.github.io/2021/08/18/language/javascript/javascript-function/"},"headline":"자바스크립트 함수","image":["https://repeto1204.github.io/images/javascript_cover.jpg"],"datePublished":"2021-08-17T16:15:42.000Z","dateModified":"2021-08-17T16:29:44.144Z","author":{"@type":"Person","name":"HandsomeJ"},"description":""}</script><link rel="canonical" href="https://repeto1204.github.io/2021/08/18/language/javascript/javascript-function/"><link rel="icon" href="/img/favicon.webp"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">HandsomeJ&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/archives">Archives</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/repeto1204"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="목차" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/javascript_cover.jpg" alt="자바스크립트 함수"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-08-17T16:15:42.000Z" title="2021. 8. 18. 오전 1:15:42">2021-08-18</time>&nbsp;게시 됨</span><span class="level-item"><time dateTime="2021-08-17T16:29:44.144Z" title="2021. 8. 18. 오전 1:29:44">2021-08-18</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/language/">language</a><span> / </span><a class="link-muted" href="/categories/language/javascript/">javascript</a></span><span class="level-item">26분안에 읽기 (약 3854 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">자바스크립트 함수</h1><div class="content"><hr>
+<span id="more"></span>
+
+<h2 id="함수"><a href="#함수" class="headerlink" title="함수"></a><strong>함수</strong></h2><p>자바스크립트에서 함수는 다른 핵심 개념들과 깊은 연관이 있기 때문에 매우 중요하다.</p>
+<p>함수는 입력을 받아 연산하여 결괏값을 반환하거나 어떠한 기능을 수행한다.</p>
+<p>함수에는 항상 입출력이 필요한 것은 아니며 만약 함수에서 아무것도 반환하지 않는다면 자동으로 undefined를 반환한다.</p>
+<p>프로그램에서 어떠한 반복적인 연산이나 반복적인 일련의 과정을 함수로 정의하여 같은 코드를 줄이고 재사용성을 증가시킨다.</p>
+<hr>
+<h2 id="함수의-정의"><a href="#함수의-정의" class="headerlink" title="함수의 정의"></a><strong>함수의 정의</strong></h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 함수 리터럴로 함수 정의</span></span><br><span class="line"><span class="keyword">const</span> myFunction = <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">parameter1, parameter2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> parameter1 + parameter2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>함수의 구성은 아래와 같다.</p>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>함수 이름<br />(add)</td>
+<td>- 함수 이름은 식별자 네이밍 규칙을 준수해야 한다.<br />- 함수 이름은 생략할 수 있고 이름이 있으면 기명 함수(named function), 이름이 없으면 익명 함수(anonymous function)라 한다.</td>
+</tr>
+<tr>
+<td>매개변수<br />(parameter1, parameter2)</td>
+<td>- 0개 이상의 매개변수가 존재할 수 있고 소괄호 내부에 위치하며 쉼표로 구분한다.<br />- 각 매개변수는 호출 시 인수가 순서대로 할당된다.<br />- 매개변수는 함수 내부에서 변수와 같이 취급되며 식별자 네이밍 규칙을 준수해야한다.</td>
+</tr>
+<tr>
+<td>반환값<br />(parameter1 + parameter2)</td>
+<td>- return 키워드를 사용하여 함수의 연산 결과 또는 원하는 결괏값을 반환할 수 있다.<br />- 명시적으로 값을 반환하지 않으면 undefined를 반환한다.</td>
+</tr>
+</tbody></table>
+<br />
+
+<p>함수를 정의하는 방법은 함수 선언문, 함수 표현식, Function 생성자 함수, 화살표 함수가 있으며 네 가지 방법은 모두 함수를 정의하는 방법이지만 약간의 차이가 있다.</p>
+<br />
+
+<p><strong>함수 선언문</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>함수 선언문은 함수 리터럴과 형태가 동일하지만 이름을 생략할 수 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// SyntaxError: Function statements require a function name</span></span><br></pre></td></tr></table></figure>
+
+<p>함수를 실행하면 반환값이 반환되어 변수에 담긴다. 만약 명시적인 반환값이 없다면 undefined가 반환된다.</p>
+<br />
+
+<p><strong>함수 표현식</strong></p>
+<p>함수는 객체 타입의 값이고 변수에 할당할 수도 있다. 함수는 프로퍼티 값이 될 수 있고 배열의 요소도 될 수 있다.</p>
+<p>이렇게 값의 성질을 갖는 객체를 <strong>일급객체</strong>라고 하며 이는 곧 함수를 값처럼 자유롭게 사용할 수 있다는 의미이다.</p>
+<p>함수 리터럴로 생성한 함수를 변수에 할당하는 정의 방식을 함수 표현식이라고 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x + y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> foo = <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;bar&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// &#x27;bar&#x27;</span></span><br><span class="line"></span><br><span class="line">bar(); <span class="comment">// bar is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>함수 표현식에 사용하는 함수 리터럴은 함수 이름을 생략할 수 있다. 이를 익명 함수라고 지칭한다.</p>
+<p>만약 함수 할당 시 함수에 이름을 붙인 기명 함수를 할당한다고 해도 함수 이름으로 호출할 수는 없다.</p>
+<p>함수 이름은 함수 몸체 내부에서만 사용할 수 있기 때문에 함수를 할당한 변수를 통하여 호출해야 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;foo!&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// &#x27;foo!&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>그렇다면 위 코드는 동작하지 않아야 하는데 실제로 실행해보면 정상 동작한다.</p>
+<p>foo는 함수 이름이고 함수 이름은 함수 몸체에서만 사용할 수 있기 때문에 호출이 불가능해야 하는데 호출이 가능하다.</p>
+<p>그 이유는 자바스크립트 엔진은 생성된 함수 객체를 가리키는 식별자가 없으면 함수를 호출하기 위해 함수 이름과 동일한 이름의 식별자를 암묵적으로 생각하고 거기에 함수 객체를 할당한다.</p>
+<p>이러한 이유로 호출이 가능한 것이다.</p>
+<br />
+
+<p><strong>Function 생성자 함수</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;return a + b&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">4</span>,<span class="number">5</span>)); <span class="comment">// 9</span></span><br></pre></td></tr></table></figure>
+
+<p>자바스크립트가 기본으로 제공하는 Function 생성자 함수에 매개변수와 함수 몸체를 문자열로 전달하면 함수 객체를 생성하여 반환한다.</p>
+<p>Function 생성자 함수는 new 키워드를 붙인 것과 붙이지 않은 것 모두 같은 함수 객체를 생성하며 코드 크기 측면에서 new 키워드를 붙이지 않는 것이 더 좋다.</p>
+<p>Function 생성자 함수는 보안 문제와 eval과 유사한 문제들이 발생할 수 있어 권장되는 방법은 아니다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> closureTest1 = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> init = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x + y + init;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(closureTest1(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">// 13</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> closureTest2 = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> init = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;return x + y + init&#x27;</span>);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(closureTest2(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">// init is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>Function 생성자 함수는 클로저를 생성하지 않는다.</p>
+<p>정확히 말해서 전역 범위로 한정된 함수를 생성하기 때문에 클로저 활용이 어렵다.</p>
+<p>만약 closureTest2 함수가 동작할 수 있게하고 싶다면 <code>window.init = 10</code>과 같이 전역 변수를 등록해주면 가능하다.</p>
+<p>하지만 이는 꽤 바보 같은 행위이다.</p>
+<br />
+
+<p><strong>화살표 함수</strong></p>
+<p>ES6에서 도입된 화살표 함수는 function 키워드를 화살표를 사용함으로써 조금 더 간략하게 함수를 선언할 수 있게 해준다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>화살표 함수는 항상 익명이다.</p>
+<p>화살표 함수는 function 키워드를 대체하기 위해 나온 것은 아니고 모양이 간소화된 만큼 내부 동작도 간소화되었다.</p>
+<p>화살표 함수는 this, arguments, super를 바인딩하지 않고 new.target 또한 바인딩하지 않는다. 그래서 화살표 함수는 생성자로 사용할 수 없다.</p>
+<br />
+
+<p><strong>함수 생성 시점과 호이스팅</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(hoistingTest1); <span class="comment">// f hoistingTest1(x, y)</span></span><br><span class="line"><span class="built_in">console</span>.dir(hoistingTest2); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(hoistingTest1(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(hoistingTest2(<span class="number">1</span>,<span class="number">2</span>)); <span class="comment">// TypeError: hoistingTest2 is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언문</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hoistingTest1</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 표현식</span></span><br><span class="line"><span class="keyword">var</span> hoistingTest2 = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>함수의 경우 자바스크립트 호이스팅이 되어 런타임 이전에 선언이 끌어올려 진다.</p>
+<p>함수 선언문의 경우 런타임 이전에 자바스크립트 엔진에 의해 먼저 실행되고 선언 후 암묵적으로 같은 이름의 식별자를 생성하고 함수 객체를 할당한다.</p>
+<p>이러한 이유로 함수 선언문으로 선언한 함수는 선언문 이전에 참조도 가능하고 호출도 가능하다.</p>
+<p>반면에, 함수 표현식으로 작성한 함수는 변수 호이스팅 규칙을 따른다.</p>
+<p>var 키워드는 호이스팅이 되지만 undefined로 초기화되어 참조 시 undefined가 반환된다.</p>
+<p>또 선언 이전에 호출을 시도하면 함수 객체가 할당되어있지 않아 에러가 발생한다.</p>
+<br />
+
+<hr>
+<h2 id="함수-호출"><a href="#함수-호출" class="headerlink" title="함수 호출"></a><strong>함수 호출</strong></h2><p>정의된 함수는 함수 이름 또는 선언된 함수가 할당된 변수명 뒤에 인수가 나열된 소괄호를 붙이면 함수가 호출된다.</p>
+<br />
+
+<p><strong>매개변수와 인수</strong></p>
+<p>함수 실행 시 외부 값을 함수 내부로 전달이 필요할 때 매개변수(parameter)를 통해 인수(argument)를 전달한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = myFunc(<span class="number">10</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<p>매개변수는 함수를 정의할 때 지정하고 호출할 때 인수를 지정한다.</p>
+<p>개수와 타입에 제한은 없으며 값으로 평가될 수 있어야 한다. 예약어나 괄호처럼 값으로 평가될 수 없는 것은 허용되지 않는다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunc</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = myFunc(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">const</span> newResult = myFunc(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newResult); <span class="comment">// 200</span></span><br><span class="line"><span class="built_in">console</span>.log(x, y); <span class="comment">// x is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>매개변수와 인수의 개수가 일치하지 않아도 에러가 발생하지 않는다.</p>
+<p>인수가 부족하면 자동으로 undefined가 할당되며 그대로 함수 내부의 구문이 실행된다. </p>
+<p>다만 그 결괏값이 달라지거나 변수의 프로퍼티를 참조해야 하는 경우라면 에러가 발생할 수도 있다.</p>
+<p>인수가 더 많은 경우 초과한 인수는 무시된다.</p>
+<p>또 인수는 함수 내부에서만 참조할 수 있다. 함수 외부에서는 참조할 수 없으며 이를 시도하면 에러가 발생한다.</p>
+<br />
+
+<p><strong>반환문</strong></p>
+<p>함수는 return을 통해 특정 값이나 함수 내부 구문의 결괏값을 반환할 수 있다.</p>
+<p>return을 명시적으로 사용하지 않으면 함수는 항상 undefined를 반환한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnTest1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 반환문 이후의 코드는 실행되지 않음</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;after return&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">returnTest2</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(returnTest1()); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(returnTest2()); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>위 코드를 보면 반환문 이후의 코드는 실행되지 않으며 반환문이 존재하지 않으면 함수는 undefined를 반환한다.</p>
+<hr>
+<h2 id="인수-참조-및-상태-변경"><a href="#인수-참조-및-상태-변경" class="headerlink" title="인수 참조 및 상태 변경"></a><strong>인수 참조 및 상태 변경</strong></h2><p>함수 내부로 전달되는 인수도 변수와 동일하게 취급되기 때문에 값에 의한 전달, 참조에 의한 전달 방식을 그대로 따른다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> num = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj, num</span>) </span>&#123;</span><br><span class="line">    obj.test = <span class="literal">true</span>;</span><br><span class="line">    num = <span class="number">100</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(obj); <span class="comment">// &#123;test: true&#125;</span></span><br><span class="line">    <span class="built_in">console</span>.log(num); <span class="comment">// 100</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj, num);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;test: true&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(num); <span class="comment">// 30</span></span><br></pre></td></tr></table></figure>
+
+<p>함수 내부에서 인수를 전달받을 때 원시 타입의 인수는 변경할 수 없기 때문에 내부에서 재할당하여 새로운 원시값으로 교체한다.</p>
+<p>그 결과로 함수 내부에서 num 값은 변경한 100인데 함수 실행 후 num을 다시 확인해보면 원래의 값인 30이 반환된다.</p>
+<p>원시타입은 값에 의한 전달을 하므로 이러한 결과가 나온다.</p>
+<p>반면에 객체 타입은 참조에 의한 전달이기 때문에 함수 내부에서 값을 변경하면 변경 사항이 그대로 유지된다.</p>
+<p>함수 내부에서 obj의 test 프로퍼티를 만들고 true라는 값을 할당했다.</p>
+<p>함수 실행 후 obj의 값을 확인해보면 변경 사항이 유지된 채로 결과가 반환된다.</p>
+<p>하지만 이는 자칫 예기치 못한 오류를 발생시킬 수도 있다.</p>
+<p>하나의 객체를 여러 코드 또는 여러 함수에서 공유할 경우 각 함수에서 객체를 변형시킨다면 다른 함수에서 일관된 값이 반환되지 않을 수 있다.</p>
+<p>이를 방지하고자 불변의 객체를 만들어 사용하거나 함수 내부에서 객체의 복사본을 새롭게 생성하는 방법을 사용한다.</p>
+<hr>
+<h2 id="함수의-여러-형태"><a href="#함수의-여러-형태" class="headerlink" title="함수의 여러 형태"></a><strong>함수의 여러 형태</strong></h2><p><strong>즉시 실행 함수</strong></p>
+<p>함수 정의와 동시에 즉시 호출되는 함수를 즉시 실행 함수(IIFE, Immediately invoked Function Expression)라고 한다.</p>
+<p>즉시 실행 함수는 단 한 번만 호출되며 다시 실행할 수 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;IIFE START&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;IIFE&#x27;</span>;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+
+<p>즉시 실행 함수는 기본적으로 익명 함수이다.</p>
+<p>기명 함수를 사용할 수도 있지만, 이때는 함수 리터럴로 평가되어 함수 몸체에서만 함수 이름을 참조할 수 있어 사실상 의미 없는 식별자가 된다.</p>
+<br />
+
+<p><strong>재귀 함수</strong></p>
+<p>자기 자신을 호출하는 함수를 재귀 함수(recursive function)라고 한다.</p>
+<p>반복되는 처리를 위해 반복문을 쓰는 대신 재귀 함수를 사용하면 간단하게 구현할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// for문을 사용한 팩토리얼</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorialUseFor</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">        result *= i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 재귀 함수를 사용한 팩토리얼</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorialUseRecursive</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> n * factorialUseRecursive(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(factorialUseFor(<span class="number">10</span>)); <span class="comment">// 3628800</span></span><br><span class="line"><span class="built_in">console</span>.log(factorialUseRecursive(<span class="number">10</span>)); <span class="comment">// 3628800</span></span><br></pre></td></tr></table></figure>
+
+<p>재귀 함수를 사용할 때 주의할 점은 반드시 멈출 수 있는 조건을 만들어야 한다는 것이다.</p>
+<p>재귀 함수는 기본적으로 자기 자신을 무한히 호출하기 때문에 탈출 조건이 없거나 무의미한 탈출 조건을 만든다면 함수가 무한히 호출되어 스택 오버플로를 발생시키고 이는 브라우저를 멈추게 할 수도 있다.</p>
+<br />
+
+<p><strong>중첩 함수</strong></p>
+<p>함수 내부에 정의된 함수를 중첩 함수(nested function)라고 한다.</p>
+<p>이는 내부 함수(inner function)라고도 불리며 중첩 함수는 외부 함수의 내부에서만 호출할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp = <span class="number">3</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        temp += <span class="number">5</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(temp); <span class="comment">// 8</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    inner();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>어떠한 함수에서 필요한 기능을 함수로 만들 때 함수 내부에 선언하여 해당 함수를 모듈화하고 외부에서 접근할 수 없게 한다.</p>
+<p>이는 함수 외부를 오염시키지 않는 방법이다.</p>
+<p>만약 특정 조건이 생성되었을 때(if, while, for) 함수를 정의하는 코드를 작성하게 되면 혼란이 발생할 수 있기 때문에 내부 함수를 선언하는 것이 바람직하다.</p>
+<br />
+
+<p><strong>콜백 함수</strong></p>
+<p>함수의 매개변수를 통해 함수의 내부로 전달되는 함수를 콜백 함수(callback function)라고 한다.</p>
+<p>이때 매개변수를 통해 콜백함수를 전달받는 함수를 고차 함수(Higher-Order Function)라고 한다.</p>
+<p>콜백 함수로 전달된 함수는 고차 함수가 호출될 때마다 평가되어 함수 객체를 생성한다.</p>
+<p>만약 고차함수가 여러 번 호출된다면 콜백 함수를 정의한 후 함수 참조를 전달하는 것이 바람직하다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hof</span>(<span class="params">char, callbackFunc</span>) </span>&#123;</span><br><span class="line">    callbackFunc(char);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> callBack = <span class="function">(<span class="params">char</span>) =&gt;</span> &#123; <span class="built_in">console</span>.log(char); &#125;;</span><br><span class="line"></span><br><span class="line">hof(<span class="string">&#x27;test&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">char</span>) </span>&#123; <span class="built_in">console</span>.log(char)&#125;); <span class="comment">// test</span></span><br><span class="line">hof(<span class="string">&#x27;test&#x27;</span>, callBack); <span class="comment">// test</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>hof 함수에서 받을 콜백 함수를 선언하고 함수 몸체에서 해당 콜백 함수를 실행했다.</p>
+<p>hof 호출 시 익명 함수를 정의하여 전달해도, 정의된 함수의 참조를 전달해도 콜백 함수의 내용이 같다면 그 결과도 같다.</p>
+<br />
+
+<p><strong>순수 함수와 비순수 함수</strong></p>
+<p>어떠한 외부 상태를 의존하지 않고 변경하지 않는 함수를 순수 함수(pure function), 외부 상태에 의존하거나 변경하는 함수를 비순수 함수(impure function)라고 한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> pureCount = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> impureCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 순수 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increasePureFunction</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ++n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 비순수 함수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increaseImpureFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ++impureCount;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pureCount = increasePureFunction(pureCount);</span><br><span class="line"><span class="built_in">console</span>.log(pureCount);</span><br><span class="line">pureCount = increasePureFunction(pureCount);</span><br><span class="line"><span class="built_in">console</span>.log(pureCount);</span><br><span class="line"></span><br><span class="line">impureCount = increaseImpureFunction();</span><br><span class="line"><span class="built_in">console</span>.log(impureCount);</span><br><span class="line">impureCount = increaseImpureFunction();</span><br><span class="line"><span class="built_in">console</span>.log(impureCount);</span><br></pre></td></tr></table></figure>
+
+<p>순수 함수 increasePureFunction는 외부 상태에 의존하지 않으며 외부 상태를 변경하지도 않는다.</p>
+<p>인수 n에 의존하여 반환값이 결정된다.</p>
+<p>반면에 비순수 함수 increaseImpureFunction는 외부의 impureCount에 의해 반환값이 결정되고 외부 상태도 변경한다.</p>
+<p>만약 함수 내부에서 외부 상태를 참조하지 않더라도 매개변수를 통해 참조하여 변경한다면 그것은 비순수 함수에 해당한다.</p>
+<p>비순수 함수는 외부 상태를 변경하여 상태 변화 추적을 어렵게 만들기 때문에 최대한 억제하고 순수 함수를 사용하는 것이 좋다.</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>자바스크립트 함수</p><p><a href="https://repeto1204.github.io/2021/08/18/language/javascript/javascript-function/">https://repeto1204.github.io/2021/08/18/language/javascript/javascript-function/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>HandsomeJ</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-08-18</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-08-18</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a><a class="icon" rel="noopener" target="_blank" title="ShareAlike" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-sa"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/javascript/">javascript</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/07/20/language/javascript/javascript-primitive-and-object/"><span class="level-item">자바스크립트 원시값과 객체</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><script src="https://utteranc.es/client.js" repo="repeto1204/blog-comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">목차</h3><ul class="menu-list"><li><a class="level is-mobile" href="#함수"><span class="level-left"><span class="level-item">1</span><span class="level-item">함수</span></span></a></li><li><a class="level is-mobile" href="#함수의-정의"><span class="level-left"><span class="level-item">2</span><span class="level-item">함수의 정의</span></span></a></li><li><a class="level is-mobile" href="#함수-호출"><span class="level-left"><span class="level-item">3</span><span class="level-item">함수 호출</span></span></a></li><li><a class="level is-mobile" href="#인수-참조-및-상태-변경"><span class="level-left"><span class="level-item">4</span><span class="level-item">인수 참조 및 상태 변경</span></span></a></li><li><a class="level is-mobile" href="#함수의-여러-형태"><span class="level-left"><span class="level-item">5</span><span class="level-item">함수의 여러 형태</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/algorithm/"><span class="level-start"><span class="level-item">algorithm</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/algorithm/leetcode/"><span class="level-start"><span class="level-item">leetcode</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/algorithm/leetcode/easy/"><span class="level-start"><span class="level-item">easy</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/algorithm/leetcode/medium/"><span class="level-start"><span class="level-item">medium</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/language/"><span class="level-start"><span class="level-item">language</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/language/javascript/"><span class="level-start"><span class="level-item">javascript</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><figure class="media-left"><a class="image" href="/2021/08/18/language/javascript/javascript-function/"><img src="/images/javascript_cover.jpg" alt="자바스크립트 함수"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-08-17T16:15:42.000Z">2021-08-18</time></p><p class="title"><a href="/2021/08/18/language/javascript/javascript-function/">자바스크립트 함수</a></p><p class="categories"><a href="/categories/language/">language</a> / <a href="/categories/language/javascript/">javascript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/20/language/javascript/javascript-primitive-and-object/"><img src="/images/javascript_cover.jpg" alt="자바스크립트 원시값과 객체"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-20T12:49:06.000Z">2021-07-20</time></p><p class="title"><a href="/2021/07/20/language/javascript/javascript-primitive-and-object/">자바스크립트 원시값과 객체</a></p><p class="categories"><a href="/categories/language/">language</a> / <a href="/categories/language/javascript/">javascript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/09/algorithm/leetcode/easy/leet-code-longest-common-prefix/"><img src="/images/leetcode_cover.jpg" alt="Longest Common Prefix"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-09T10:17:39.000Z">2021-07-09</time></p><p class="title"><a href="/2021/07/09/algorithm/leetcode/easy/leet-code-longest-common-prefix/">Longest Common Prefix</a></p><p class="categories"><a href="/categories/algorithm/">algorithm</a> / <a href="/categories/algorithm/leetcode/">leetcode</a> / <a href="/categories/algorithm/leetcode/easy/">easy</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/09/algorithm/leetcode/easy/leet-code-roman-to-integer/"><img src="/images/leetcode_cover.jpg" alt="Roman to Integer"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-09T08:59:39.000Z">2021-07-09</time></p><p class="title"><a href="/2021/07/09/algorithm/leetcode/easy/leet-code-roman-to-integer/">Roman to Integer</a></p><p class="categories"><a href="/categories/algorithm/">algorithm</a> / <a href="/categories/algorithm/leetcode/">leetcode</a> / <a href="/categories/algorithm/leetcode/easy/">easy</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/08/algorithm/leetcode/easy/leet-code-palindrome-number/"><img src="/images/leetcode_cover.jpg" alt="Palindrome Number"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-08T08:41:22.000Z">2021-07-08</time></p><p class="title"><a href="/2021/07/08/algorithm/leetcode/easy/leet-code-palindrome-number/">Palindrome Number</a></p><p class="categories"><a href="/categories/algorithm/">algorithm</a> / <a href="/categories/algorithm/leetcode/">leetcode</a> / <a href="/categories/algorithm/leetcode/easy/">easy</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/leetcode/"><span class="tag">leetcode</span><span class="tag">8</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">HandsomeJ&#039;s Blog</a><p class="is-size-7"><span>&copy; 2021 HandsomeJ</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/repeto1204"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: ''
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="맨 위로" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "이 웹 사이트는 귀하의 경험을 향상시키기 위해 Cookie를 사용합니다.",
+          dismiss: "무시",
+          allow: "허용",
+          deny: "거부",
+          link: "더 알아보기",
+          policy: "Cookie 정책",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="입력 하세요..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"입력 하세요...","untitled":"(제목 없음)","posts":"포스트","pages":"페이지","categories":"카테고리","tags":"태그"});
+        });</script></body></html>
