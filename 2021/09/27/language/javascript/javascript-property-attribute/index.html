@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>자바스크립트 프로퍼티 어트리뷰트 - HandsomeJ&#039;s Tech Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#000000"><meta name="application-name" content="HandsomeJ&#039;s Tech Blog"><meta name="msapplication-TileImage" content="/img/favicon.webp"><meta name="msapplication-TileColor" content="#000000"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="HandsomeJ&#039;s Tech Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content=""><meta property="og:type" content="blog"><meta property="og:title" content="자바스크립트 프로퍼티 어트리뷰트"><meta property="og:url" content="https://repeto1204.github.io/2021/09/27/language/javascript/javascript-property-attribute/"><meta property="og:site_name" content="HandsomeJ&#039;s Tech Blog"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://repeto1204.github.io/images/javascript_cover.jpg"><meta property="article:published_time" content="2021-09-27T12:18:29.000Z"><meta property="article:modified_time" content="2021-09-28T15:43:07.432Z"><meta property="article:author" content="HandsomeJ"><meta property="article:tag" content="javascript"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/javascript_cover.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://repeto1204.github.io/2021/09/27/language/javascript/javascript-property-attribute/"},"headline":"자바스크립트 프로퍼티 어트리뷰트","image":["https://repeto1204.github.io/images/javascript_cover.jpg"],"datePublished":"2021-09-27T12:18:29.000Z","dateModified":"2021-09-28T15:43:07.432Z","author":{"@type":"Person","name":"HandsomeJ"},"description":""}</script><link rel="canonical" href="https://repeto1204.github.io/2021/09/27/language/javascript/javascript-property-attribute/"><link rel="icon" href="/img/favicon.webp"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">HandsomeJ&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/archives">Archives</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/repeto1204"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="목차" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/javascript_cover.jpg" alt="자바스크립트 프로퍼티 어트리뷰트"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-09-27T12:18:29.000Z" title="2021. 9. 27. 오후 9:18:29">2021-09-27</time>&nbsp;게시 됨</span><span class="level-item"><time dateTime="2021-09-28T15:43:07.432Z" title="2021. 9. 29. 오전 12:43:07">2021-09-29</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/language/">language</a><span> / </span><a class="link-muted" href="/categories/language/javascript/">javascript</a></span><span class="level-item">13분안에 읽기 (약 1879 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">자바스크립트 프로퍼티 어트리뷰트</h1><div class="content"><hr>
+<span id="more"></span>
+
+<h2 id="내부-슬롯과-내부-메서드"><a href="#내부-슬롯과-내부-메서드" class="headerlink" title="내부 슬롯과 내부 메서드"></a><strong>내부 슬롯과 내부 메서드</strong></h2><p>자바스크립트의 내부 슬롯(internal slot)과 내부 메서드(internal method)는 자바스크립트의 엔진의 알고리즘을 설명하기 위해 ECMAScript에서 사용하는 의사 프로퍼티(pseudo property)와 의사 메서드(pseudo method)이다.</p>
+<p>이는 ECMAScript에 이중 대괄호([[…]])로 감싸서 표현되며 엔진에서 실제로 동작하지만 개발자가 접근할 수 있도록 외부에 공개된 것은 아니다.</p>
+<p>원칙적으로 접근하거나 호출할 방법이 제공되지 않으나 일부 내부 슬롯, 내부 메서드의 한하여 간접적으로 접근할 수 있는 수단을 제공한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> o = &#123;&#125;;</span><br><span class="line">o.[[prototype]] <span class="comment">// Uncaught SyntaxError: Unexpected token &#x27;[&#x27;</span></span><br><span class="line">o.__proto__ <span class="comment">// Object.prototype</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="디스크립터-객체"><a href="#디스크립터-객체" class="headerlink" title="디스크립터 객체"></a><strong>디스크립터 객체</strong></h2><p>자바스크립트 엔진은 프로퍼티를 생성할 때 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 자동으로 정의한다.</p>
+<p>이를 디스크립터 객체라고 하는데 데이터(data), 접근자(accessor) 두 가지 형식을 취할 수 있다.</p>
+<p>프로퍼티 어트리뷰트는 내부 상태 값인 내부 슬롯이기 때문에 직접 접근할 수 없고 Object.getOwnPropertyDescriptor 메서드를 사용하여 간접적으로 확인할 수 있다.</p>
+<br />
+
+<p><strong>공유 디스크립터</strong></p>
+<p>데이터 디스크립터와 접근자 디스크립터는 다음의 두 가지 키를 공유한다.</p>
+<table>
+<thead>
+<tr>
+<th>프로퍼티 어트리뷰트</th>
+<th>디스크립터 객체 프로퍼티</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[[Configurable]]</td>
+<td>configurable</td>
+<td>프로퍼티 재정의 가능 여부를 나타낸다.</td>
+</tr>
+<tr>
+<td>[[Enumerable]]</td>
+<td>enumerable</td>
+<td>프로퍼티 열거 가능 여부를 나타낸다.</td>
+</tr>
+</tbody></table>
+<br />
+
+<p><strong>데이터 디스크립터</strong></p>
+<table>
+<thead>
+<tr>
+<th>프로퍼티 어트리뷰트</th>
+<th>디스크립터 객체 프로퍼티</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[[Value]]</td>
+<td>value</td>
+<td>프로퍼티 키를 통해 값에 접근하면 반환된 값</td>
+</tr>
+<tr>
+<td>[[Writable]]</td>
+<td>writable</td>
+<td>프로퍼티 값의 변경 가능 여부를 나타낸다.</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="string">&#x27;userId&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(user, <span class="string">&#x27;id&#x27;</span>));</span><br><span class="line"><span class="comment">// &#123;value: &#x27;userId&#x27;, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br />
+
+<p><strong>접근자 디스크립터</strong></p>
+<table>
+<thead>
+<tr>
+<th>프로퍼티 어트리뷰트</th>
+<th>디스크립터 객체 프로퍼티</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[[Get]]</td>
+<td>get</td>
+<td>접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 읽을 때 호출되는 접근자 함수</td>
+</tr>
+<tr>
+<td>[[Set]]</td>
+<td>set</td>
+<td>접근자 프로퍼티를 통해 데이터 프로퍼티의 값을 저장할 때 호출되는 접근자 함수</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="string">&#x27;userId&#x27;</span>,</span><br><span class="line">    <span class="attr">nickName</span>: <span class="string">&#x27;useNickName&#x27;</span>,</span><br><span class="line">    <span class="keyword">get</span> <span class="title">userId</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.id;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span> <span class="title">userId</span>(<span class="params">id</span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(user, <span class="string">&#x27;userId&#x27;</span>));</span><br><span class="line"><span class="comment">// &#123;enumerable: true, configurable: true, get: ƒ, set: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="프로퍼티-정의"><a href="#프로퍼티-정의" class="headerlink" title="프로퍼티 정의"></a><strong>프로퍼티 정의</strong></h2><p>프로퍼티 어트리뷰트는 새로운 프로퍼티를 정의할 때 명시적으로 정의하거나, 기존 프로퍼티의 값을 재정의할 수 있다.</p>
+<p><code>Object.defineProperty</code>, <code>Object.defineProperties</code> 메서드를 사용하여 정의한다.</p>
+<p>만약 생략한다면 다음과 같은 기본값을 가진다.</p>
+<table>
+<thead>
+<tr>
+<th>프로퍼티 어트리뷰트</th>
+<th>디스크립터 객체 프로퍼티</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[[Configurable]]</td>
+<td>configurable</td>
+<td>false</td>
+</tr>
+<tr>
+<td>[[Enumerable]]</td>
+<td>enumerable</td>
+<td>false</td>
+</tr>
+<tr>
+<td>[[Value]]</td>
+<td>value</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>[[Writable]]</td>
+<td>writable</td>
+<td>false</td>
+</tr>
+<tr>
+<td>[[Get]]</td>
+<td>get</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>[[Set]]</td>
+<td>set</td>
+<td>undefined</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 디스크립터</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&#x27;id&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="string">&#x27;userId&#x27;</span>,</span><br><span class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(user, <span class="string">&#x27;id&#x27;</span>);</span><br><span class="line"><span class="comment">// &#123;value: &#x27;userId&#x27;, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&#x27;nickName&#x27;</span>, &#123; <span class="attr">value</span>: <span class="string">&#x27;useNickName&#x27;</span> &#125;)</span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(user, <span class="string">&#x27;nickName&#x27;</span>);</span><br><span class="line"><span class="comment">// &#123;value: &#x27;useNickName&#x27;, writable: false, enumerable: false, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Writable]]의 값이 false라면 [[Value]]값을 변경할 수 없다.</span></span><br><span class="line">user.nickName = <span class="string">&#x27;newNickName&#x27;</span>; <span class="comment">// 값을 변경하면 무시된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Enumerable]]의 값이 false라면 열거할 수 없다.</span></span><br><span class="line"><span class="built_in">Object</span>.keys(user); <span class="comment">// [&#x27;id&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [[Configurable]]의 값이 false라면 삭제하거나 재정의 할 수 없다.</span></span><br><span class="line"><span class="keyword">delete</span> user.nickName; <span class="comment">// 프로퍼티를 삭제하면 무시된다.</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&#x27;nickName&#x27;</span>, &#123; <span class="attr">configurable</span>: <span class="literal">true</span> &#125;); <span class="comment">// Uncaught TypeError: Cannot redefine property: nickName</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 접근자 디스크립터</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&#x27;userId&#x27;</span>, &#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.id;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">set</span>(<span class="params">id</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.id = id;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(user, <span class="string">&#x27;userId&#x27;</span>);</span><br><span class="line"><span class="comment">// &#123;enumerable: true, configurable: true, get: ƒ, set: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br />
+
+<p><code>Object.defineProperties</code> 메서드를 사용하면 한 번에 정의할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 디스크립터</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperties(user, &#123;</span><br><span class="line">    <span class="attr">id</span>: &#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="string">&#x27;userId&#x27;</span>,</span><br><span class="line">        <span class="attr">writable</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">enumerable</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">configurable</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">nickName</span>: &#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="string">&#x27;nickName&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">userId</span>: &#123;</span><br><span class="line">        <span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.id;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">set</span>(<span class="params">id</span>)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.id = id;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">enumerable</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">configurable</span>: <span class="literal">true</span> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(user);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">	id: &quot;userId&quot;,</span></span><br><span class="line"><span class="comment">    userId: &#x27;userId&#x27;,</span></span><br><span class="line"><span class="comment">    nickName: &quot;nickName&quot;,</span></span><br><span class="line"><span class="comment">    get userId: ƒ get(),</span></span><br><span class="line"><span class="comment">    set userId: ƒ set(id),</span></span><br><span class="line"><span class="comment">    [[Prototype]]: Object</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="객체-변경-방지"><a href="#객체-변경-방지" class="headerlink" title="객체 변경 방지"></a><strong>객체 변경 방지</strong></h2><p>객체는 변경 가능한 값이기 때문에 재할당 없이 직접 변경할 수 있다.</p>
+<p>만약 중요한 값 또는 변경되지 않아야 하는 값이 객체에 저장되어있다면 객체 변경을 방지해야 한다.</p>
+<p>자바스크립트에는 세 가지의 객체 변경 방지 메서드를 제공하는데 각각 변경 금지 강도가 다르다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>추가</th>
+<th>삭제</th>
+<th>읽기</th>
+<th>쓰기</th>
+<th>재정의</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Object.preventExtensions</td>
+<td>X</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Object.seal</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Object.freeze</td>
+<td>X</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody></table>
+<br />
+
+<p><strong>Object.preventExtentions</strong></p>
+<p>새로운 프로퍼티가 객체에 추가되는 것을 방지한다. 즉, 장래의 확장을 방지한다.</p>
+<p>프로퍼티는 동적 추가와 <code>ObjectdefineProperty</code> 메서드로 추가할 수 있는데 이 두 가지가 모두 금지된다.</p>
+<p>객체가 확장 가능 객체인지 여부는 <code>Object.isExtensible</code> 메서드로 확인할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">value</span>: <span class="string">&#x27;testValue&#x27;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isExtensible(obj); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체의 확장을 방지한다.</span></span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(obj); </span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isExtensible(obj); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&#x27;myName&#x27;</span>; <span class="comment">// 무시된다.</span></span><br><span class="line"><span class="comment">// TypeError: Cannot define property name, object is not extensible</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&#x27;name&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="string">&#x27;myName&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123; value: &#x27;testValue&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> obj.value; <span class="comment">// 삭제는 가능</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br />
+
+<p><strong>Object.seal</strong></p>
+<p>객체를 밀봉하여 새로운 프로퍼티를 추가할 수 없게 하고 현재 존재하는 프로퍼티의 모든 속성을 설정 불가능 상태로 만든다.</p>
+<p>하지만 쓰기 가능한 속성만 밀봉 후에도 변경할 수 있게 한다.</p>
+<p>객체가 밀봉 상태인지 여부는 <code>Object.isSealed</code> 메서드로 확인할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">value</span>: <span class="string">&#x27;testValue&#x27;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isSealed(obj); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체를 밀봉한다.</span></span><br><span class="line"><span class="built_in">Object</span>.seal(obj); </span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isSealed(obj); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptors(obj);</span><br><span class="line"><span class="comment">// value: &#123; value: &#x27;testValue&#x27;, writable: true, enumerable: true, configurable: false &#125;</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&#x27;myName&#x27;</span>; <span class="comment">// 무시된다.</span></span><br><span class="line"><span class="keyword">delete</span> obj.value; <span class="comment">// 무시된다.</span></span><br><span class="line"></span><br><span class="line">obj.value = <span class="string">&#x27;newValue&#x27;</span>; <span class="comment">// 변경은 가능하다.</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123; value: &#x27;newValue&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// TypeError: Cannot redefine property: value</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&#x27;value&#x27;</span>, &#123; <span class="attr">configurable</span>: <span class="literal">true</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<br />
+
+<p><strong>Object.freeze</strong></p>
+<p>객체를 동결한다. 동결된 객체는 모든 것이 금지되고 읽기만 가능하다.</p>
+<p>객체의 동결 여부는 <code>Object.isFrozen</code> 메서드로 확인할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">value</span>: <span class="string">&#x27;testValue&#x27;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isFrozen(obj); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체를 동결한다.</span></span><br><span class="line"><span class="built_in">Object</span>.freeze(obj); </span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isFrozen(obj); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptors(obj);</span><br><span class="line"><span class="comment">// value: &#123;value: &#x27;testValue&#x27;, writable: false, enumerable: true, configurable: false&#125;</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&#x27;myName&#x27;</span>; <span class="comment">// 무시된다.</span></span><br><span class="line"><span class="keyword">delete</span> obj.value; <span class="comment">// 무시된다.</span></span><br><span class="line">obj.value = <span class="string">&#x27;newValue&#x27;</span>; <span class="comment">// 무시된다.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// TypeError: Cannot redefine property: value</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">&#x27;value&#x27;</span>, &#123; <span class="attr">configurable</span>: <span class="literal">true</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<br />
+
+<p><strong>불변 객체</strong></p>
+<p>객체 변경 방지 메서드는 중첩객체의 변경 방지를 보장하지 않는다.</p>
+<p>프로퍼티가 객체라면 <code>Object.freeze</code> 메서드로 동결해도 중첩 객체까지 동결할 수 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="string">&#x27;userId&#x27;</span>,</span><br><span class="line">    <span class="attr">info</span>: &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;J&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="string">&#x27;18&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.freeze(user);</span><br><span class="line"><span class="built_in">Object</span>.isFrozen(user); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.isFrozen(user.info); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">user.info.city = <span class="string">&#x27;SEOUL&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(user); <span class="comment">// &#123;id: &#x27;userId&#x27;, info: &#123;name: &#x27;J&#x27;, age: &#x27;18&#x27;, city: &#x27;SEOUL&#x27;&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<br />
+
+<p>중첩 객체까지 전부 동결하여 불변 객체를 만들고 싶다면 객체를 값으로 갖는 모든 프로퍼티에 대해 재귀적으로 <code>Object.freeze</code> 메서드를 호출해야한다.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> deepFreeze = <span class="function">(<span class="params">object</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 객체이고 동결되지 않는 객체만 동결한다.</span></span><br><span class="line">    <span class="keyword">if</span> (object &amp;&amp; <span class="keyword">typeof</span> object === <span class="string">&#x27;object&#x27;</span> &amp;&amp; !<span class="built_in">Object</span>.isFrozen(object)) &#123;</span><br><span class="line">        <span class="built_in">Object</span>.freeze(object);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 모든 프로퍼티를 순회하여 재귀적으로 동결한다.</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(object)) &#123;</span><br><span class="line">            deepFreeze(object[key]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> object;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">internal</span>: &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">deepFreeze(obj);</span><br><span class="line"></span><br><span class="line">obj2.internal.a = <span class="string">&#x27;anotherValue&#x27;</span>; <span class="comment">// 무시된다.</span></span><br><span class="line">obj2.internal.a; <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>자바스크립트 프로퍼티 어트리뷰트</p><p><a href="https://repeto1204.github.io/2021/09/27/language/javascript/javascript-property-attribute/">https://repeto1204.github.io/2021/09/27/language/javascript/javascript-property-attribute/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>HandsomeJ</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-09-27</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-09-29</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a><a class="icon" rel="noopener" target="_blank" title="ShareAlike" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-sa"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/javascript/">javascript</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/09/03/language/javascript/javascript-scope/"><span class="level-item">자바스크립트 스코프</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><script src="https://utteranc.es/client.js" repo="repeto1204/blog-comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">목차</h3><ul class="menu-list"><li><a class="level is-mobile" href="#내부-슬롯과-내부-메서드"><span class="level-left"><span class="level-item">1</span><span class="level-item">내부 슬롯과 내부 메서드</span></span></a></li><li><a class="level is-mobile" href="#디스크립터-객체"><span class="level-left"><span class="level-item">2</span><span class="level-item">디스크립터 객체</span></span></a></li><li><a class="level is-mobile" href="#프로퍼티-정의"><span class="level-left"><span class="level-item">3</span><span class="level-item">프로퍼티 정의</span></span></a></li><li><a class="level is-mobile" href="#객체-변경-방지"><span class="level-left"><span class="level-item">4</span><span class="level-item">객체 변경 방지</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/algorithm/"><span class="level-start"><span class="level-item">algorithm</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/algorithm/leetcode/"><span class="level-start"><span class="level-item">leetcode</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/algorithm/leetcode/easy/"><span class="level-start"><span class="level-item">easy</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/algorithm/leetcode/medium/"><span class="level-start"><span class="level-item">medium</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/language/"><span class="level-start"><span class="level-item">language</span></span><span class="level-end"><span class="level-item tag">10</span></span></a><ul><li><a class="level is-mobile" href="/categories/language/javascript/"><span class="level-start"><span class="level-item">javascript</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><figure class="media-left"><a class="image" href="/2021/09/27/language/javascript/javascript-property-attribute/"><img src="/images/javascript_cover.jpg" alt="자바스크립트 프로퍼티 어트리뷰트"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-09-27T12:18:29.000Z">2021-09-27</time></p><p class="title"><a href="/2021/09/27/language/javascript/javascript-property-attribute/">자바스크립트 프로퍼티 어트리뷰트</a></p><p class="categories"><a href="/categories/language/">language</a> / <a href="/categories/language/javascript/">javascript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/09/03/language/javascript/javascript-scope/"><img src="/images/javascript_cover.jpg" alt="자바스크립트 스코프"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-09-03T06:53:26.000Z">2021-09-03</time></p><p class="title"><a href="/2021/09/03/language/javascript/javascript-scope/">자바스크립트 스코프</a></p><p class="categories"><a href="/categories/language/">language</a> / <a href="/categories/language/javascript/">javascript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/08/18/language/javascript/javascript-function/"><img src="/images/javascript_cover.jpg" alt="자바스크립트 함수"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-08-17T16:15:42.000Z">2021-08-18</time></p><p class="title"><a href="/2021/08/18/language/javascript/javascript-function/">자바스크립트 함수</a></p><p class="categories"><a href="/categories/language/">language</a> / <a href="/categories/language/javascript/">javascript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/20/language/javascript/javascript-primitive-and-object/"><img src="/images/javascript_cover.jpg" alt="자바스크립트 원시값과 객체"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-20T12:49:06.000Z">2021-07-20</time></p><p class="title"><a href="/2021/07/20/language/javascript/javascript-primitive-and-object/">자바스크립트 원시값과 객체</a></p><p class="categories"><a href="/categories/language/">language</a> / <a href="/categories/language/javascript/">javascript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/09/algorithm/leetcode/easy/leet-code-longest-common-prefix/"><img src="/images/leetcode_cover.jpg" alt="Longest Common Prefix"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-09T10:17:39.000Z">2021-07-09</time></p><p class="title"><a href="/2021/07/09/algorithm/leetcode/easy/leet-code-longest-common-prefix/">Longest Common Prefix</a></p><p class="categories"><a href="/categories/algorithm/">algorithm</a> / <a href="/categories/algorithm/leetcode/">leetcode</a> / <a href="/categories/algorithm/leetcode/easy/">easy</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/javascript/"><span class="tag">javascript</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/leetcode/"><span class="tag">leetcode</span><span class="tag">8</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">HandsomeJ&#039;s Blog</a><p class="is-size-7"><span>&copy; 2021 HandsomeJ</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/repeto1204"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: ''
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="맨 위로" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "이 웹 사이트는 귀하의 경험을 향상시키기 위해 Cookie를 사용합니다.",
+          dismiss: "무시",
+          allow: "허용",
+          deny: "거부",
+          link: "더 알아보기",
+          policy: "Cookie 정책",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="입력 하세요..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"입력 하세요...","untitled":"(제목 없음)","posts":"포스트","pages":"페이지","categories":"카테고리","tags":"태그"});
+        });</script></body></html>
